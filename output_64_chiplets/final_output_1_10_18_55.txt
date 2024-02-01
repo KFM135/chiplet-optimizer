@@ -1,0 +1,13 @@
+Best Parameter RL:[2, 60, 5, 1, 20, 62, 1, 2, 42, 32, 1, 1, 20, 98, 1], Best Throughput RL:178.4036752865266
+Best Parameter SA:[2, 64, 22, 0, 18, 44, 1, 2, 19, 18, 1, 1, 18, 91, 1], Best Throughput SA:158.90961208335523
+Best Parameter:[2, 60, 5, 1, 20, 62, 1, 2, 42, 32, 1, 1, 20, 98, 1], Best Throughput:178.4036752865266
+Run time:0:05:17.828198
+
+This value was entered in the overleaf as on 1/10/2024.
+
+Encoding:
+
+0: CoWoS
+1: EMIB
+2: SoIC
+3: FOVEROS    
