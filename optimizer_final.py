@@ -5,6 +5,7 @@ import ast
 import gym
 import numpy as np
 from stable_baselines3 import PPO, A2C, SAC, TD3, DQN, HerReplayBuffer
+from ChipletEnv import *
 
 start_time = datetime.datetime.now()
 
@@ -24,7 +25,7 @@ SA_script_path = os.path.join(run_dir, 'SA_64_chiplet.py')
 
 best_cost_model_val_SA = -np.inf
 best_parameter_SA = []
-for i in range(0, 10):
+for i in range(0, 2):
     print(f'Running script {i} of 10')
     out_file_name = 'SA_3D_64_' + str(i) + '.txt'
     out_file_path = os.path.join(out_dir, out_file_name)
@@ -43,26 +44,16 @@ for i in range(0, 10):
     if best_throughput > best_cost_model_val_SA:
         best_parameter_SA, best_cost_model_val_SA = action, best_throughput
 
-
-
 ## RL section
 '''
 Here the pretrained RL models are used to predict the actions. And the best ever action is taken as the optimum parameter.
 However, the RL model can also be trained with this script. todo: add this feature
 '''
-
-# defining the environment
 best_cost_model_val_RL = -np.inf
 best_parameter_RL = []
 
-
-gym.envs.register(
-    id = 'ChipletEnv',
-    entry_point = 'gym.envs.classic_control:CustomEnv',
-    max_episode_steps = 10,
-)
-env = gym.make('ChipletEnv')
-
+# defining the environment
+env = CustomEnv()
 RL_model_dir = 'RL_64_chiplet'
 file_list = os.listdir(RL_model_dir)
 trained_RL_models = [file for file in file_list if file.endswith('.zip')]
@@ -77,7 +68,7 @@ for i in range(0, len(trained_RL_models)):
         action_after_training, _ = model.predict(rand_obs, deterministic=True)
         action = action_refined(action_after_training)
         best_throughput_RL, _, _, _, _, _ = throughput(action)
-        print(f'best param:{action}, best throughput:{best_throughput_RL}')
+        # print(f'best param:{action}, best throughput:{best_throughput_RL}')
         if best_throughput_RL > best_cost_model_val_RL:
             best_parameter_RL, best_cost_model_val_RL = action, best_throughput_RL
 
