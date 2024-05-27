@@ -14,11 +14,9 @@ ref_tasks_per_sec = [191, 38, 25, 152, 153];
 peak_ops_per_sec_A100 = 156;             % TFLOPs
 peak_ops_per_sec_chiplet = [237 249];       % TFLOPs; 64 chiplet = 237, 128 chiplets = 249
 
-%ops_per_task = [4, 410, 447, 947, 0.222];
 ops_per_task = [4, 410, 447, 947, 32];
 
-% Scale factor (probably because of mapping efficiency; and maybe because of the non-linear and other non-GEMM operations. not quite sure
-% about this gap). So the scale factor is derived from the reference
+% Scale factor (because of mapping efficiency; non-linear and other non-GEMM operation). The scale factor is derived from the reference
 % throughput got from the actual GPU runs. And then used this scale factor
 % in this equation: tasks_per_sec = peak_ops_per_sec_64_chiplet / (scale factor * ops_per_task)
 
@@ -110,7 +108,6 @@ scribe_line = 0.2;
 wafer_diameter = 300;
 wafer_cost = 9346; 
 edge_loss = 5;
-%os_area_scale_factor = 4; %not sure, why they have such a large scale factor
 os_area_scale_factor = 4;
 %package_factor = 2; % factor = 2 as package>900
 package_factor = 2;
@@ -121,8 +118,6 @@ num_chiplet = 1;
 bonding_yield_os = 0.99;
 area_scale_factor_si = 1.1;
 defect_density_si = 0.06;
-%bonding_yield_si = 0.95; %actual
-%bonding_yield_si = 0.99;
 bonding_yield_si = [0.99, 1]; 
 
 
@@ -144,7 +139,6 @@ package_area_gpu = gpu_area * os_area_scale_factor;
 cost_raw_package_gpu = package_area_gpu * cost_factor_os * package_factor;
 
 cost_raw_chips_gpu = (cost_raw_die_gpu + gpu_area * c4_bump_cost_factor) * num_chiplet;
-%cost_raw_chips_gpu = gpu_area * c4_bump_cost_factor * num_chiplet;
 cost_defect_chips_gpu = cost_defect_die_gpu * num_chiplet;
 cost_defect_package_gpu = cost_raw_package_gpu * 1 / (bonding_yield_os^num_chiplet) - 1;
 cost_wasted_chips_gpu = (cost_raw_chips_gpu + cost_defect_chips_gpu) * 1 / (bonding_yield_os ^ num_chiplet) - 1;
@@ -157,7 +151,6 @@ cost_total_gpu = cost_package_RE_gpu + cost_die_RE_gpu;
 %%
 % Die cost
 
-%num_chiplet_pair = [60 112];   % change it to num_chiplet
 num_chiplet_pair = [30 56];
 for i=1:length(num_chiplet_pair)
     chiplet_area(i) = 800 / num_chiplet_pair(i);
@@ -193,9 +186,6 @@ for i=1:length(num_chiplet_pair)
 
     end
 
-    % for j = 1:length(bonding_yield_si)
-    %     cost_total_chiplet(i, j) = cost_RE_package_chiplet(i, j) + cost_die_RE_chiplet(i);
-    % end
 end
 
 disp('cost package chiplet')
@@ -207,16 +197,6 @@ die_cost_all = [cost_die_RE_chiplet cost_die_RE_gpu];
 final_mat = [die_cost_all; package_cost_all];
 denom = final_mat(:,3);
 x = final_mat ./ denom;
-
-% final_mat = [[cost_package_gpu; cost_package_gpu] cost_RE_package_chiplet'];
-% final_mat_f = [final_mat;cost_die_RE_chiplet cost_die_RE_gpu];
-% % cost_total_gpu = [cost_total_gpu; cost_total_gpu];
-% % disp([cost_total_gpu cost_total_chiplet'])
-% 
-% 
-% % x = [cost_die_RE_chiplet, cost_die_RE_gpu; cost_RE_package_chiplet, cost_package_RE_gpu; cost_total_chiplet, cost_total_gpu];
-% denom = [cost_die_RE_gpu; cost_package_RE_gpu; cost_package_RE_gpu];
-% x = final_mat_f ./ denom
 
 fprintf("Die cost gpu:%d; Package cost gpu:%d\n", cost_die_RE_gpu, cost_package_RE_gpu)
 fprintf("Die cost 60 chiplet:%d; Package cost 60 chiplet:%d\n", cost_die_RE_chiplet(1), cost_RE_package_chiplet(1))
