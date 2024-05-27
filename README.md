@@ -7,6 +7,7 @@ This repository contains the code for this paper: Chiplet-Gym: An RL-based Optim
 ## Running optimizer with pretrained RL models:
 `python optimizer_final.py`
 Outputs will be saved in output_64_chiplets/final_output_<time_stamp>.txt
+The parameter encodings are provided in `ParameterEncoding.txt` and HBM location encodin is provided in `HBM_LocationEncoding.txt`.
 ## Training RL agents: 
 `python training_multiple_RL_agent.py`
 The models will be saved in RL_64_chiplet/ directory
