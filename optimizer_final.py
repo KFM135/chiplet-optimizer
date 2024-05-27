@@ -18,6 +18,8 @@ random point and will find the optimum parameter from there on.
 run_dir = os.path.dirname(os.path.abspath(__file__))
 out_dir = 'output_64_chiplets'
 isExist = os.path.exists(out_dir)
+SA_run = 10       # Define the number how many times the SA should be run
+
 if not isExist:
     os.makedirs(out_dir)
 
@@ -25,8 +27,8 @@ SA_script_path = os.path.join(run_dir, 'SA_64_chiplet.py')
 
 best_cost_model_val_SA = -np.inf
 best_parameter_SA = []
-for i in range(0, 2):
-    print(f'Running script {i} of 10')
+for i in range(0, SA_run):
+    print(f'Running script {i} of {SA_run}')
     out_file_name = 'SA_3D_64_' + str(i) + '.txt'
     out_file_path = os.path.join(out_dir, out_file_name)
     command = [sys.executable, SA_script_path, f'1>{out_file_path}', str(i)]
