@@ -1,0 +1,320 @@
+HBM location:{
+    "0": [
+        "left"
+    ],
+    "1": [
+        "right"
+    ],
+    "2": [
+        "top"
+    ],
+    "3": [
+        "bottom"
+    ],
+    "4": [
+        "middle"
+    ],
+    "5": [
+        "3D-stacked"
+    ],
+    "6": [
+        "left",
+        "right"
+    ],
+    "7": [
+        "left",
+        "top"
+    ],
+    "8": [
+        "left",
+        "bottom"
+    ],
+    "9": [
+        "left",
+        "middle"
+    ],
+    "10": [
+        "left",
+        "3D-stacked"
+    ],
+    "11": [
+        "right",
+        "top"
+    ],
+    "12": [
+        "right",
+        "bottom"
+    ],
+    "13": [
+        "right",
+        "middle"
+    ],
+    "14": [
+        "right",
+        "3D-stacked"
+    ],
+    "15": [
+        "top",
+        "bottom"
+    ],
+    "16": [
+        "top",
+        "middle"
+    ],
+    "17": [
+        "top",
+        "3D-stacked"
+    ],
+    "18": [
+        "bottom",
+        "middle"
+    ],
+    "19": [
+        "bottom",
+        "3D-stacked"
+    ],
+    "20": [
+        "middle",
+        "3D-stacked"
+    ],
+    "21": [
+        "left",
+        "right",
+        "top"
+    ],
+    "22": [
+        "left",
+        "right",
+        "bottom"
+    ],
+    "23": [
+        "left",
+        "right",
+        "middle"
+    ],
+    "24": [
+        "left",
+        "right",
+        "3D-stacked"
+    ],
+    "25": [
+        "left",
+        "top",
+        "bottom"
+    ],
+    "26": [
+        "left",
+        "top",
+        "middle"
+    ],
+    "27": [
+        "left",
+        "top",
+        "3D-stacked"
+    ],
+    "28": [
+        "left",
+        "bottom",
+        "middle"
+    ],
+    "29": [
+        "left",
+        "bottom",
+        "3D-stacked"
+    ],
+    "30": [
+        "left",
+        "middle",
+        "3D-stacked"
+    ],
+    "31": [
+        "right",
+        "top",
+        "bottom"
+    ],
+    "32": [
+        "right",
+        "top",
+        "middle"
+    ],
+    "33": [
+        "right",
+        "top",
+        "3D-stacked"
+    ],
+    "34": [
+        "right",
+        "bottom",
+        "middle"
+    ],
+    "35": [
+        "right",
+        "bottom",
+        "3D-stacked"
+    ],
+    "36": [
+        "right",
+        "middle",
+        "3D-stacked"
+    ],
+    "37": [
+        "top",
+        "bottom",
+        "middle"
+    ],
+    "38": [
+        "top",
+        "bottom",
+        "3D-stacked"
+    ],
+    "39": [
+        "top",
+        "middle",
+        "3D-stacked"
+    ],
+    "40": [
+        "bottom",
+        "middle",
+        "3D-stacked"
+    ],
+    "41": [
+        "left",
+        "right",
+        "top",
+        "bottom"
+    ],
+    "42": [
+        "left",
+        "right",
+        "top",
+        "middle"
+    ],
+    "43": [
+        "left",
+        "right",
+        "top",
+        "3D-stacked"
+    ],
+    "44": [
+        "left",
+        "right",
+        "bottom",
+        "middle"
+    ],
+    "45": [
+        "left",
+        "right",
+        "bottom",
+        "3D-stacked"
+    ],
+    "46": [
+        "left",
+        "right",
+        "middle",
+        "3D-stacked"
+    ],
+    "47": [
+        "left",
+        "top",
+        "bottom",
+        "middle"
+    ],
+    "48": [
+        "left",
+        "top",
+        "bottom",
+        "3D-stacked"
+    ],
+    "49": [
+        "left",
+        "top",
+        "middle",
+        "3D-stacked"
+    ],
+    "50": [
+        "left",
+        "bottom",
+        "middle",
+        "3D-stacked"
+    ],
+    "51": [
+        "right",
+        "top",
+        "bottom",
+        "middle"
+    ],
+    "52": [
+        "right",
+        "top",
+        "bottom",
+        "3D-stacked"
+    ],
+    "53": [
+        "right",
+        "top",
+        "middle",
+        "3D-stacked"
+    ],
+    "54": [
+        "right",
+        "bottom",
+        "middle",
+        "3D-stacked"
+    ],
+    "55": [
+        "top",
+        "bottom",
+        "middle",
+        "3D-stacked"
+    ],
+    "56": [
+        "left",
+        "right",
+        "top",
+        "bottom",
+        "middle"
+    ],
+    "57": [
+        "left",
+        "right",
+        "top",
+        "bottom",
+        "3D-stacked"
+    ],
+    "58": [
+        "left",
+        "right",
+        "top",
+        "middle",
+        "3D-stacked"
+    ],
+    "59": [
+        "left",
+        "right",
+        "bottom",
+        "middle",
+        "3D-stacked"
+    ],
+    "60": [
+        "left",
+        "top",
+        "bottom",
+        "middle",
+        "3D-stacked"
+    ],
+    "61": [
+        "right",
+        "top",
+        "bottom",
+        "middle",
+        "3D-stacked"
+    ],
+    "62": [
+        "left",
+        "right",
+        "top",
+        "bottom",
+        "middle",
+        "3D-stacked"
+    ]
+}

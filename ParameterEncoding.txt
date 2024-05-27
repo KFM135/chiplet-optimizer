@@ -1,0 +1,27 @@
+param_0: architecture_type
+	0: 2p5D
+	1: 5p5D_MoL
+	2: 5p5D_LoL
+
+param_1: num_of_chiplets
+param_2: num_n_location_of_HBM
+param_3: ai2ai_intrcnct_2p5D
+	0: CoWoS
+	1: EMIB
+param_4: ai2ai_DataRate_2p5D
+param_5: ai2ai_LinkDensity_2p5D
+param_6: ai2ai_TraceLength_2p5D
+param_7: ai2ai_intrcnct_3D
+	0: SoIC
+	1: FOVEROS
+param_8: ai2ai_DataRate_3D
+param_9: ai2ai_LinkDensity_3D
+param_10: ai2ai_TraceLength_3D
+param_11: ai2hbm_intrcnct
+	0: CoWoS
+	1: EMIB
+	2: SoIC
+	3: FOVEROS
+param_12: ai2hbm_DataRate
+param_13: ai2hbm_LinkDensity
+param_14: ai2hbm_TraceLength
